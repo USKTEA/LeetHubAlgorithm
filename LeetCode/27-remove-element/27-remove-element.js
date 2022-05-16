@@ -6,22 +6,8 @@
 var removeElement = function(nums, val) {
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] === val) {
-            nums[i] = 'k';
+            nums.splice(i, 1);
+            i--;
         }
-    }
-    
-    nums.sort();
-    
-    let count = 0;
-    
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === 'k') {
-            count++;
-        }
-    }
-    
-    while (count !== 0) {
-        nums.pop();
-        count--;
     }
 };
