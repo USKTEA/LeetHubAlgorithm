@@ -32,10 +32,10 @@ var strStr = function(haystack, needle) {
       index = -1;
     }
   }
-
+    
     if (right === total.length) {
-    return index;
-  }
+        return index;
+    }
 
   return -1;
 };
