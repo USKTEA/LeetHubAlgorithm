@@ -17,7 +17,6 @@ var search = function(nums, target, l = 0, r = nums.length - 1) {
         return -1;
     }
 
-
     if (nums[half] > target) {
         return search(nums, target, left, half - 1);
     }
