@@ -13,7 +13,7 @@ var search = function(nums, target, l = 0, r = nums.length - 1) {
         return half;
     }
     
-        if (left === right) {
+    if (left === right) {
         return -1;
     }
 
