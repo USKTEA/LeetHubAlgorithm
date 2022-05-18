@@ -4,13 +4,15 @@
  * @return {number}
  */
 var countOdds = function(low, high) {
-    let result = 0;
+    let count = 0;
     
-    for (let i = low; i <= high; i++) {
-        if (i % 2 !== 0) {
-            result++;
-        }
+    if (low % 2 === 0 && high % 2 === 0) {
+        count = (high - low) / 2;
+        
+        return count;
     }
     
-    return result;
+    count = Math.floor((high - low) / 2) + 1;
+    
+    return count;
 };
