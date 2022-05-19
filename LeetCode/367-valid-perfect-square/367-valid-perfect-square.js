@@ -6,7 +6,7 @@ var isPerfectSquare = function(num) {
   let half = Math.floor(num / 2);
   let prevHalf = 0;
   
-  if (num === 1 || half * half === num) {
+  if (num < 2 || half * half === num) {
     return true;
   }
     
