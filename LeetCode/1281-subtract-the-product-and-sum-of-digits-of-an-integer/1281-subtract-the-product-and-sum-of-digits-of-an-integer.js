@@ -4,8 +4,13 @@
  */
 var subtractProductAndSum = function(n) {
     const numberArray = String(n).split('').map(element => +element);
-    const multiply = numberArray.reduce((acc, curr) => curr * acc);
-    const plus = numberArray.reduce((acc, curr) => curr + acc);
+    let pod = 1;
+    let sod = 0;
     
-    return multiply - plus;
+    numberArray.forEach(num => {
+       pod = pod * num;
+        sod = sod + num;
+    });
+    
+    return pod - sod;
 };
