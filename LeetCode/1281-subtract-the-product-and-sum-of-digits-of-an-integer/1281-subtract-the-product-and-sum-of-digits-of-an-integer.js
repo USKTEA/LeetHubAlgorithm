@@ -8,7 +8,7 @@ var subtractProductAndSum = function(n) {
     let sod = 0;
     
     numberArray.forEach(num => {
-       pod = pod * num;
+        pod = pod * num;
         sod = sod + num;
     });
     
