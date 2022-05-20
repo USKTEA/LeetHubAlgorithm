@@ -8,7 +8,6 @@ var average = function(salary) {
 
   excludeMinAndMax.splice(0, 1);
   excludeMinAndMax.splice(-1, 1);
-  console.log(excludeMinAndMax);
 
   return (
     excludeMinAndMax.reduce((total, current) => total + current, 0) /
