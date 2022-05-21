@@ -10,14 +10,10 @@ var arraySign = function(nums) {
         
         return total * curr;
     });
-    
-    if (sum > 0) {
-        return 1;
+
+    if (sum === 0) {
+        return 0;
     }
     
-    if (sum < 0) {
-        return -1;
-    }
-    
-    return sum;
+    return sum > 0 ? 1 : -1; 
 };
