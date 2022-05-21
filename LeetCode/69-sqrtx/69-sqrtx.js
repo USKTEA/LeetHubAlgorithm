@@ -6,7 +6,6 @@ var mySqrt = function(x) {
     let min = 0;
     let max = x;
     
-    
     while (min <= max) {
         let mid = Math.floor((min + max) / 2);
         
