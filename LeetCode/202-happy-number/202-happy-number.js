@@ -4,11 +4,11 @@
  */
 var isHappy = function(n) {
     let number = n;
-    let set = new Set();
+    const set = new Set();
     let sum = 0;
     
     while (sum !== 1) {
-        let newArray = [...number.toString()].map(e => +e);
+        const newArray = [...number.toString()].map(e => +e);
         sum  = newArray.reduce((a, b) => a + b * b, 0);
         
         if (set.has(sum)) {
