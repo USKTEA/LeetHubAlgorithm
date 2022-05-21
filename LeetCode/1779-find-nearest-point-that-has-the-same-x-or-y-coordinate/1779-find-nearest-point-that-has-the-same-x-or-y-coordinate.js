@@ -5,15 +5,14 @@
  * @return {number}
  */
 var nearestValidPoint = function(x, y, points) {
-  const myLocation = [x, y];
   let distance = [];
   let index = 0;
   let result;
 
   for (const value of points) {
-    if (value[0] === myLocation[0] || value[1] === myLocation[1]) {
+    if (value[0] === x || value[1] === y) {
       const manhattanDisntance =
-        Math.abs(myLocation[0] - value[0]) + Math.abs(myLocation[1] - value[1]);
+        Math.abs(x - value[0]) + Math.abs(y - value[1]);
       distance.push({ [index]: manhattanDisntance });
       index++;
     } else {
