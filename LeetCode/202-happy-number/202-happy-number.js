@@ -3,21 +3,23 @@
  * @return {boolean}
  */
 var isHappy = function(n) {
-    let number = String(n).split('');
+    let number = n;
+    let set = new Set();
     let sum = 0;
-    let result = 0; 
     
-    while (true) {
-        sum = number.reduce((a, b) => a + b * b, 0);
+    while (sum !== 1) {
+        let newArray = [...number.toString()].map(e => +e);
+        sum  = newArray.reduce((a, b) => a + b * b, 0);
+        
+        if (set.has(sum)) {
+            return false;
+        }
         
         if (sum === 1) {
             return true;
         }
-        
-        if (sum === 20) {
-            return false;
-        }
-        
-        return isHappy(sum);
+
+        set.add(sum);
+        number = sum;
     }
 };
