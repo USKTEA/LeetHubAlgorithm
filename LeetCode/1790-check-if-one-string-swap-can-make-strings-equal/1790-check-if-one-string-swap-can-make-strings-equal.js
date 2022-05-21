@@ -4,11 +4,14 @@
  * @return {boolean}
  */
 var areAlmostEqual = function(s1, s2) {
+  if (s1 === s2) {
+    return true;
+  }
+    
   const swap = (arr, i, j) => {
     const swapped = arr.slice();
-    console.log(swapped);
     [swapped[i], swapped[j]] = [swapped[j], swapped[i]];
-    console.log(swapped);
+
     return swapped;
   };
 
@@ -18,15 +21,15 @@ var areAlmostEqual = function(s1, s2) {
   let count = 0;
   let change1 = -1;
   let change2 = -1;
+    
+    while (array1[index]) {
+      if (array1[index] !== array2[index]) {
+        count++;
 
-  if (s1 === s2) {
-    return true;
-  }
-
-  while (array1[index]) {
-    if (array1[index] !== array2[index]) {
-      count++;
-
+      if (count > 2) {
+        return false;
+      }
+      
       if (change1 !== -1 && change2 === -1) {
         change2 = index;
       }
@@ -39,9 +42,7 @@ var areAlmostEqual = function(s1, s2) {
     index++;
   }
 
-  if (count > 2) {
-    return false;
-  }
+
 
   if (swap(array1, change1, change2).join() === array2.join()) {
     return true;
