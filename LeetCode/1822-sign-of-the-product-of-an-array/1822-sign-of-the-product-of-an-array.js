@@ -3,7 +3,6 @@
  * @return {number}
  */
 var arraySign = function(nums) {
-    
     const sum = nums.reduce((total, curr) => {
         if (curr === 0) {
             return 0;
