@@ -3,7 +3,7 @@
  * @return {number}
  */
 var largestPerimeter = function(nums) {
-    const sortedNums = nums.slice().sort((a, b) => b - a);
+    const sortedNums = nums.sort((a, b) => b - a);
     let longest = 0;
     let left = longest + 1;
     let right = left + 1;
