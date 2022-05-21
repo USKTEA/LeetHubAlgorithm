@@ -3,7 +3,14 @@
  * @return {number}
  */
 var arraySign = function(nums) {
-    const sum = nums.reduce((total, curr) => total  * curr);
+    
+    const sum = nums.reduce((total, curr) => {
+        if (curr === 0) {
+            return 0;
+        }
+        
+        return total * curr;
+    });
     
     if (sum > 0) {
         return 1;
@@ -13,5 +20,5 @@ var arraySign = function(nums) {
         return -1;
     }
     
-    return 0;
+    return sum;
 };
