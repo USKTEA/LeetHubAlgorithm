@@ -4,19 +4,24 @@
  * @return {character}
  */
 var nextGreatestLetter = function(letters, target) {
-  const newSet = new Set();
-
-  if (target >= letters[letters.length - 1]) {
-    return letters[0];
-  }
-
-  for (let i = 0; i < letters.length; i++) {
-    newSet.add(letters[i]);
-  }
-
-  for (const value of newSet) {
-    if (value > target) {
-      return value;
+    let min = 0;
+    let max = letters.length - 1;
+    
+    while (min <= max) {
+        const mid = Math.floor((min + max) / 2);
+        
+        if (letters[mid] > target) {
+            max = mid -1;
+        }
+        
+        if (letters[mid] <= target) {
+            min = mid + 1;
+        }
     }
-  }
+    
+    if (min === letters.length) {
+        return letters[0];
+    } else {
+        return letters[min];
+    }
 };
