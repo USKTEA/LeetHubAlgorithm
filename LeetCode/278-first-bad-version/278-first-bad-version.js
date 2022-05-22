@@ -23,6 +23,7 @@ var solution = function(isBadVersion) {
         
         while (min <= max) {
             const mid = Math.floor((min + max) / 2);
+            
             if (isBadVersion(mid) === true) {
                 max = mid - 1;
             } else {
