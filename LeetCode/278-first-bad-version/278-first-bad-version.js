@@ -13,10 +13,6 @@
  * @return {function}
  */
 var solution = function(isBadVersion) {
-    /**
-     * @param {integer} n Total versions
-     * @return {integer} The first bad version
-     */
     return function(n) {
         let min = 0;
         let max = n;
