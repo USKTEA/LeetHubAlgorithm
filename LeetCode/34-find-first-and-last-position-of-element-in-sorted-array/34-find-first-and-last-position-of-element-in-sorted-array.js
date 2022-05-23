@@ -19,7 +19,6 @@ var searchRange = function(nums, target) {
     if (result.length === 1) {
         return [result[0], result[0]];
     }
-    
-    const length = result.lenght - 1;
-    return [result[0], result[result.length - 1]]
+
+    return [result[0], result[result.length - 1]];
 };
