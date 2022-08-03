@@ -8,8 +8,12 @@ var subtractProductAndSum = function(n) {
         total[0] = total[0] * Number(current);
         total[1] = total[1] + Number(current);
         
+        if (index === inputs.length -1) {
+            return total[0] - total[1];
+        }
+        
         return total;
     }, [1, 0]);
     
-    return answer[0] - answer[1];
+    return answer;
 };
