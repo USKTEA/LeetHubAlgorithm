@@ -5,16 +5,23 @@
  * @return {number}
  */
 var nearestValidPoint = function(x, y, points) {
-    let min = Infinity
-    let idx = -1
-    points.forEach(([a,b], i)=>{
-        if(a===x || b===y){
-            const dist = Math.abs(x-a) + Math.abs(y-b)
-            if(dist<min){
-                idx = i
-                min = dist
-            }
+    const distances = points.map((point, index) => {
+       if (point[0] === x || point[1] === y) {
+           return [Math.abs(x - point[0]) + Math.abs(y - point[1]), index];
+       }
+        
+        return false;
+    }).filter((point) => {
+        if (point !== false) {
+            return point;
         }
-    })
-    return idx
+    });
+    
+    if (!distances.length) {
+        return -1;
+    }
+    
+    const sorted = distances.sort((a, b) => a[0] - b[0]);
+    
+    return sorted[0][1];
 };
