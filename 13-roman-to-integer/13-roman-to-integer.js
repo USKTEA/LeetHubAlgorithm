@@ -18,19 +18,18 @@ var romanToInt = function(s) {
         'CD': 400,
         'CM': 900
     };
-    
-    const inputNumber = s.split('');
+
     let sum = 0;
     
-    for (let i = 0; i < inputNumber.length; i++) {
-        if (stored[inputNumber[i] + inputNumber[i + 1]]) {
-            sum = sum + stored[inputNumber[i] + inputNumber[i + 1]];
+    for (let i = 0; i < s.length; i++) {
+        if (stored[s[i] + s[i + 1]]) {
+            sum = sum + stored[s[i] + s[i + 1]];
             i += 1;
             
             continue;
         }
         
-        sum = sum + stored[inputNumber[i]];
+        sum = sum + stored[s[i]];
     }
     
     return sum;
