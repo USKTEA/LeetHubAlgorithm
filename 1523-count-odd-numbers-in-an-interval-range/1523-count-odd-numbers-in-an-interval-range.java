@@ -6,17 +6,9 @@ class Solution {
         // 3 4 5 6 7 8 9 둘다 홀수 floor 5 / 2 + 2  
         
         if (low % 2 == 0 && high % 2 == 0) {
-            return (int)Math.ceil((high - (double)low - 1) / 2); 
+            return (high - low) / 2; 
         }
         
-        if (low % 2 == 0 ^ high % 2 == 0) {
-            return (high - low - 1) / 2 + 1;
-        }
-        
-        if (low == high) {
-            return 1;
-        }
-        
-        return (int)Math.floor((high - low - 1) / 2) + 2;
+        return (high - low) / 2 + 1;
     }
 }
